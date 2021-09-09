@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::group(
     function () {
         Route::view('/dashboard', 'dashboard')->name('dashboard');
 
+        // Route for user data
         Route::get('/user', [UserController::class, 'index_view'])->name(
             'user'
         );
@@ -30,6 +32,30 @@ Route::group(
         Route::view('/user/edit/{userId}', 'pages.user.user-edit')->name(
             'user.edit'
         );
+        // End route user data
+
+        // Route for siswa data
+        Route::get('/siswa', [SiswaController::class, 'index_view'])->name(
+            'siswa'
+        );
+        Route::view('/siswa/new', 'pages.siswa.siswa-new')->name('siswa.new');
+        Route::view('/siswa/edit/{siswaId}', 'pages.siswa.siswa-edit')->name(
+            'siswa.edit'
+        );
+        // End route siswa data
+
+        // Route for sekolah data
+        Route::get('/sekolah', [SekolahController::class, 'index_view'])->name(
+            'sekolah'
+        );
+        Route::view('/sekolah/new', 'pages.sekolah.sekolah-new')->name(
+            'sekolah.new'
+        );
+        Route::view(
+            '/sekolah/edit/{sekolahId}',
+            'pages.sekolah.sekolah-edit'
+        )->name('siswa.edit');
+        // End route sekolah data
     }
 );
 
