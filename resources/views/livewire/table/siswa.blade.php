@@ -123,7 +123,7 @@
                     <td>{{ $siswa->asal_sekolah }}</td>
                     <td>{{ $siswa->nik }}</td>
                     <td>{{ $siswa->nama_siswa }}</td>
-                    <td><img src="https://ui-avatars.com/api/?name=John+Doe/?size=512"></td>
+                    <td> {{-- foto siswa --}} </td>
                     <td>{{ $siswa->jenis_kelamin }}</td>
                     <td>{{ $siswa->tanggal_lahir->format('d M Y') }}</td>
                     <td>{{ $siswa->tempat_lahir }}</td>
